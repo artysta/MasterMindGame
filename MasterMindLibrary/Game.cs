@@ -67,6 +67,7 @@ namespace MasterMindLibrary
 		// Rozpoczyna grę.
 		public void Start()
 		{
+			TotalMoves = 0;
 			GameState = State.InProgress;
 		}
 
@@ -90,7 +91,6 @@ namespace MasterMindLibrary
 			for (int i = 0; i < letters.Length; i++)
 			{
 				letters[i] = POSSIBLY_LETTERS[i];
-				Console.WriteLine("Setting up letters: " + letters[i]);
 			}
 
 			Letters = new string(letters);
@@ -136,7 +136,6 @@ namespace MasterMindLibrary
 			for (int i = 0; i < CodeLength; i++)
 				sb.Append(Letters[r.Next(Letters.Length)]);
 			Code = sb.ToString();
-			Console.WriteLine($"Wylosowanmy kod {Code}.");
 		}
 
 		/*
@@ -156,7 +155,7 @@ namespace MasterMindLibrary
 				if (!Letters.Contains(code[i].ToString()))
 					return false;
 			
-			// Przypisuje kod do zmiennej, gdy wszystko jet okej.
+			// Przypisuje kod do zmiennej, gdy wszystko jest okej.
 			Code = code;
 			return true;
 		}

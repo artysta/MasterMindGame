@@ -13,7 +13,6 @@ namespace MasterMindLibrary
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < length; i++)
 				sb.Append(letters[r.Next(letters.Length)]);
-			Console.WriteLine($"Wylosowanmy kod KOMPUTERA {sb.ToString()}.");
 			return sb.ToString();
 		}
 
