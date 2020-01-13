@@ -143,7 +143,7 @@ namespace GameCLI
 					if (answer[i] == -1)
 					{
 						WriteInColor("ŹLE", ConsoleColor.Red);
-						Console.Write($" - literki {code[i]} nie ma w kodzie w ogóle.\n");
+						Console.WriteLine($" - literki {code[i]} nie ma w kodzie w ogóle.");
 					}
 					else if (answer[i] == 0)
 					{
