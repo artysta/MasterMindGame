@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterMindLibrary", "Master
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameCLI", "GameCLI\GameCLI.csproj", "{688AD0E3-84B7-43C0-A149-49C4B2AD1621}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameWPF", "GameWPF\GameWPF.csproj", "{3A4477D8-364A-411B-8E43-3CB929763BC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameWPF", "GameWPF\GameWPF.csproj", "{CD8524BD-4DDC-45B2-97A8-A439F497D2BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{688AD0E3-84B7-43C0-A149-49C4B2AD1621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{688AD0E3-84B7-43C0-A149-49C4B2AD1621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{688AD0E3-84B7-43C0-A149-49C4B2AD1621}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A4477D8-364A-411B-8E43-3CB929763BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A4477D8-364A-411B-8E43-3CB929763BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A4477D8-364A-411B-8E43-3CB929763BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A4477D8-364A-411B-8E43-3CB929763BC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD8524BD-4DDC-45B2-97A8-A439F497D2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD8524BD-4DDC-45B2-97A8-A439F497D2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD8524BD-4DDC-45B2-97A8-A439F497D2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD8524BD-4DDC-45B2-97A8-A439F497D2BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
