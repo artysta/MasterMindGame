@@ -4,6 +4,7 @@ using System.Text;
 namespace MasterMindLibrary
 {
 	// Główna klasa (model) gry.
+	// Model można bardzo łatwo zmodyfikować, tak by pozwalał na generowanie jeszcze dłuższych i bardziej skomplikowanych kodów i dawał użytkownikowi więcej mozliwości.
 	public class Game
 	{
 		/*
