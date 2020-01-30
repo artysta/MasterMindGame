@@ -1,6 +1,9 @@
 ﻿# MasterMindGame
 Prosty projekt programistyczny związany z grą Mastermind wykonany na potrzeby przedmiotu Matematyka dyskretna na WSEI Kraków.
 
+- Więcej informacji na temat gry Mastermind: https://pl.wikipedia.org/wiki/Mastermind_(gra_planszowa)
+- Dokumentacja wygenerowana za pomocą narzędzia `Doxygen`: https://artysta.github.io/mastermind/
+
 ## PL
 
 ### Klasa Game - model gry dostarczający API
