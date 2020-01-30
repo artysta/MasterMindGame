@@ -3,10 +3,17 @@ using System.Text;
 
 namespace MasterMindLibrary
 {
-	// Klasa komputera wykorzystywana do generowania (na różnych zasadzach) kodów.
+	/// <summary>
+	/// Klasa komputera wykorzystywana do generowania (na różnych zasadzach) kodów.
+	/// </summary>
 	public class Computer
 	{
-		// Zwraca losowy kod.
+		/// <summary>
+		/// Zwraca losowy kod.
+		/// </summary>
+		/// <param name="letters">Ciąg znaków zawierający literki, z których składać się ma wylosowany kod.</param>
+		/// <param name="length">Długość kodu</param>
+		/// <returns>Losowy kod.</returns>
 		public string GetRandomCode(string letters, int length)
 		{
 			Random r = new Random();

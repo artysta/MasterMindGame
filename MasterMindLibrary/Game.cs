@@ -3,8 +3,9 @@ using System.Text;
 
 namespace MasterMindLibrary
 {
-	// Główna klasa (model) gry.
-	// Model można bardzo łatwo zmodyfikować, tak by pozwalał na generowanie jeszcze dłuższych i bardziej skomplikowanych kodów i dawał użytkownikowi więcej mozliwości.
+	/// <summary>
+	/// Główna klasa (model) gry, który można bardzo łatwo zmodyfikować, tak by pozwalał na generowanie jeszcze dłuższych i bardziej skomplikowanych kodów i dawał użytkownikowi więcej mozliwości.
+	/// </summary>
 	public class Game
 	{
 		/*
@@ -18,47 +19,80 @@ namespace MasterMindLibrary
 		 * - p - purple (dodatkowy),
 		 * - o - orange (dodatkowy).
 		 */
+		/// <summary>
+		/// Tablica literek (kolorów), z któych składać się może kod:
+		///  r - red,
+		///  y - yellow,
+		///  g - green,
+		///  b - blue,
+		///  c - cyan,
+		///  m - magenta,
+		///  p - purple,
+		///  o - orange
+		/// </summary>
 		public readonly static char[] POSSIBLY_LETTERS = { 'r', 'y', 'g', 'b', 'c', 'm', 'p', 'o' };
-		// Minimalna liczba kolorów, z których składać się może kod.
+
+		/// <summary>
+		/// Minimalna liczba kolorów, z których składać się może kod.
+		/// </summary>
 		public readonly static int MIN_COLORS = 6;
-		// Maksymalna liczba kolorów równa liczbie literek, z których składać się może kod.
+
+		/// <summary>
+		/// Maksymalna liczba kolorów równa liczbie literek, z których składać się może kod.
+		/// </summary>
 		public readonly static int MAX_COLORS = POSSIBLY_LETTERS.Length;
-		// Minimalna długość kodu do odgadnięcia.
+		/// <summary>
+		/// Minimalna długość kodu.
+		/// </summary>
 		public readonly static int MIN_CODE_LENGTH = 4;
-		// Maksymalna długość kodu do odgadnięcia.
+		/// <summary>
+		/// Maksymalna długość kodu.
+		/// </summary>
 		public readonly static int MAX_CODE_LENGTH = 8;
-		// Maksymalna liczba ruchów.
+		/// <summary>
+		/// Maksymalna liczba ruchów.
+		/// </summary>
 		public readonly static int MAX_MOVES = 9;
 
-		// Zwraca / ustawia kod do odgadnięcia.
+		/// <summary>
+		/// Property, które pozwala na zwrócenie lub ustawienie kodu.
+		/// </summary>
 		public string Code
 		{
 			private get;
 			set;
 		}
 
-		// Zwraca / ustawia długość kodu.
+		/// <summary>
+		/// Property, które pozwala na zwrócenie lub ustawienie długości kodu. Domyślnie długość kodu = 4.
+		/// </summary>
 		public int CodeLength
 		{
 			get;
 			set;
 		} = 4;
 
-		// Zwraca / ustawia literki brane pod uwagę przy losowaniu kodu.
+		/// <summary>
+		/// Property, które pozwala na zwrócenie lub ustawienie literek, które będą brane pod uwagę przy losowaniu kodu. Domyślne literki to r, y, g, b, c, m.
+		/// </summary>
 		public string Letters
 		{
 			get;
 			private set;
 		} = "rygbcm";
 
-		// Zwraca / ustawia liczbę ruchów.
+		/// <summary>
+		/// Property, które pozwala na zwrócenie lub ustawienie liczby wykonanych ruchów.
+		/// </summary>
 		public int TotalMoves
 		{
 			get;
 			private set;
 		}
 
-		// Zwraca / ustawia stan gry.
+		/// <summary>
+		/// Property, które pozwala na zwrócenie lub ustawienie stanu gry.
+		/// </summary>
 		public State GameState
 		{
 			get;
@@ -72,19 +106,26 @@ namespace MasterMindLibrary
 			GameState = State.InProgress;
 		}
 
-		// Kończy grę z niepowodzeniem - gracz poddał się lub nie udało mu się odgadnąć kodu w wyznaczonej liczbie ruchów.
+		/// <summary>
+		/// Kończy grę z niepowodzeniem - gracz poddał się lub nie udało mu się odgadnąć kodu w wyznaczonej liczbie ruchów.
+		/// </summary>
 		public void Stop()
 		{
 			GameState = State.Over;
 		}
 
-		// Kończy grę - użytkownik pomyślnie odgadnął kod.
+		/// <summary>
+		/// Kończy grę - użytkownik pomyślnie odgadnął kod.
+		/// </summary>
 		private void Finish()
 		{
 			GameState = State.Finished;
 		}
 
-		// Ustawia literki (na podstawie podanej długości), które będą brane pod uwagę podczas losowania kodu.
+		/// <summary>
+		/// Ustawia literki (na podstawie podanej długości), które będą brane pod uwagę podczas losowania kodu.
+		/// </summary>
+		/// <param name="length">Długość kodu.</param>
 		public void SetLetters(int length)
 		{
 			char[] letters = new char[length];
@@ -97,18 +138,26 @@ namespace MasterMindLibrary
 			Letters = new string(letters);
 		}
 
-		// Sprawdza, czy długość podanego przez gracza kodu jest prawidłowa.
+		/// <summary>
+		/// Sprawdza, czy długość podanego przez gracza kodu jest prawidłowa.
+		/// </summary>
+		/// <param name="code">Kod.</param>
+		/// <returns>Zwraca true, jeśli długość kodu jest odpowiednia i false jeśli nie.</returns>
 		public bool CheckCodeLength(string code)
 		{
 			return code.Length == CodeLength;
 		}
 
-		/* Sprawdza kod i zwraca tablicę zawierającą ilość liczb równą ustalonej długości kodu.
-		 * Dla każdej literki (każdego indeksu) kodu zwraca:
-		 * - -1 - jeżeli literka na danej pozycji (danym indeksie) w ogóle nie znajduje się w podanym przez użytkownika kodzie,
-		 * -  0 - jeżeli literka znajduje się w podanym przez użytkownika kodzie, ale na innym miejscu,
-		 * -  1 - jeżeli literka znajduje się w podanym przez użytkownika kodzie na dokładnie tym samym miejscu.
-		 */
+		/// <summary>
+		/// Sprawdza kod i zwraca tablicę zawierającą ilość liczb równą ustalonej długości kodu.
+		/// </summary>
+		/// <param name="code">Kod.</param>
+		/// <returns>
+		/// Dla każdej literki (każdego indeksu) kodu zwraca:
+		/// -1 - jeżeli literka na danej pozycji (danym indeksie) w ogóle nie znajduje się w podanym przez użytkownika kodzie,
+		///  0 - jeżeli literka znajduje się w podanym przez użytkownika kodzie, ale na innym miejscu,
+		///  1 - jeżeli literka znajduje się w podanym przez użytkownika kodzie na dokładnie tym samym miejscu.
+		/// </returns>
 		public int[] CheckCode(string code)
 		{
 			int[] output = new int[CodeLength];
@@ -129,7 +178,9 @@ namespace MasterMindLibrary
 			return output;
 		}
 
-		// Ustawia losowy kod do odgadnięcia.
+		/// <summary>
+		/// Ustawia losowy kod do odgadnięcia.
+		/// </summary>
 		public void SetRandomCode()
 		{
 			Random r = new Random();
@@ -139,14 +190,15 @@ namespace MasterMindLibrary
 			Code = sb.ToString();
 		}
 
-		/*
-		 * Ustawia kod podany przez gracza, który będzie mógł zostać odgadnięty przez innego gracza / komputer.
-		 * Zwraca:
-		 *  - false, gdy długość kodu podanego przez gracza jest inna od tego, który obsługuje w konkretnej sytuacji gra.
-		 *  - false również w sytuacji, gdy w podanym przez użytkownia kodzie znajdują się literki nieobsługiwane przez grę.
-		 *  - zwraca true, gdy kod spełnia wszystkie wymagania.
-		 *  Taka weryfikacja kodu pozwala uniknąć m.in. zapętlenia się gry.
-		 */
+		/// <summary>
+		/// Ustawia kod podany przez gracza, który będzie mógł zostać odgadnięty przez innego gracza / komputer.
+		/// </summary>
+		/// <param name="code">Kod</param>
+		/// <returns>
+		/// Zwraca:
+		/// - false, gdy długość kodu podanego przez gracza jest inna od tego, który obsługuje w konkretnej sytuacji gra lub gdy w podanym przez użytkownia kodzie znajdują się literki nieobsługiwane przez grę,
+		/// - zwraca true, gdy kod spełnia wszystkie wymagania.
+		/// </returns>
 		public bool SetUserCode(string code)
 		{
 			if (code.Length != CodeLength) return false;
@@ -161,7 +213,9 @@ namespace MasterMindLibrary
 			return true;
 		}
 
-		// Pomocniczy enum pozwalający na określenie stanu gry.
+		/// <summary>
+		/// Pomocniczy enum pozwalający na określenie stanu gry.
+		/// </summary>
 		public enum State
 		{
 			InProgress, Over, Finished
