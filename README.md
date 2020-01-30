@@ -165,3 +165,18 @@ Taka weryfikacja kodu pozwala uniknąć m.in. zapętlenia się gry.
       </td>
    </tr>
 </table>
+
+2) GameXamarinAndroid
+
+<table>
+   <tr>
+      <td>
+         <img src="/screenshots/screenshot-6.png" alt="screenshot-3.png"/>
+      </td>
+   </tr>
+    <tr>
+      <td>
+         <img src="/screenshots/screenshot-7.png" alt="screenshot-4.png"/>
+      </td>
+   </tr>
+</table>
