@@ -8,27 +8,16 @@ namespace MasterMindLibrary
 	/// </summary>
 	public class Game
 	{
-		/*
-		 * Tablica literek (kolorów), z któych składać się może kod:
-		 * - r - red,
-		 * - y - yellow,
-		 * - g - green,
-		 * - b - blue
-		 * - c - cyan,
-		 * - m - magenta,
-		 * - p - purple (dodatkowy),
-		 * - o - orange (dodatkowy).
-		 */
 		/// <summary>
 		/// Tablica literek (kolorów), z któych składać się może kod:
-		///  r - red,
-		///  y - yellow,
-		///  g - green,
-		///  b - blue,
-		///  c - cyan,
-		///  m - magenta,
-		///  p - purple,
-		///  o - orange
+		/// - r - red,
+		/// - y - yellow,
+		/// - g - green,
+		/// - b - blue,
+		/// - c - cyan,
+		/// - m - magenta,
+		/// - p - purple,
+		/// - o - orange
 		/// </summary>
 		public readonly static char[] POSSIBLY_LETTERS = { 'r', 'y', 'g', 'b', 'c', 'm', 'p', 'o' };
 
@@ -142,7 +131,9 @@ namespace MasterMindLibrary
 		/// Sprawdza, czy długość podanego przez gracza kodu jest prawidłowa.
 		/// </summary>
 		/// <param name="code">Kod.</param>
-		/// <returns>Zwraca true, jeśli długość kodu jest odpowiednia i false jeśli nie.</returns>
+		/// <returns>
+		/// - true, jeśli długość kodu jest odpowiednia,
+		/// - false jeśli długość kodu jest nieodpowiednia.</returns>
 		public bool CheckCodeLength(string code)
 		{
 			return code.Length == CodeLength;
@@ -154,9 +145,9 @@ namespace MasterMindLibrary
 		/// <param name="code">Kod.</param>
 		/// <returns>
 		/// Dla każdej literki (każdego indeksu) kodu zwraca:
-		/// -1 - jeżeli literka na danej pozycji (danym indeksie) w ogóle nie znajduje się w podanym przez użytkownika kodzie,
-		///  0 - jeżeli literka znajduje się w podanym przez użytkownika kodzie, ale na innym miejscu,
-		///  1 - jeżeli literka znajduje się w podanym przez użytkownika kodzie na dokładnie tym samym miejscu.
+		/// - -1 - jeżeli literka na danej pozycji (danym indeksie) w ogóle nie znajduje się w podanym przez użytkownika kodzie,
+		/// - 0 - jeżeli literka znajduje się w podanym przez użytkownika kodzie, ale na innym miejscu,
+		/// - 1 - jeżeli literka znajduje się w podanym przez użytkownika kodzie na dokładnie tym samym miejscu.
 		/// </returns>
 		public int[] CheckCode(string code)
 		{
@@ -195,7 +186,6 @@ namespace MasterMindLibrary
 		/// </summary>
 		/// <param name="code">Kod</param>
 		/// <returns>
-		/// Zwraca:
 		/// - false, gdy długość kodu podanego przez gracza jest inna od tego, który obsługuje w konkretnej sytuacji gra lub gdy w podanym przez użytkownia kodzie znajdują się literki nieobsługiwane przez grę,
 		/// - zwraca true, gdy kod spełnia wszystkie wymagania.
 		/// </returns>
