@@ -42,8 +42,6 @@ Prosty projekt programistyczny związany z grą Mastermind wykonany na potrzeby 
 
 `void Stop()` - kończy grę z niepowodzeniem - gracz poddał się lub nie udało mu się odgadnąć kodu w wyznaczonej liczbie ruchów.
 
-`void Finish()` - kończy grę - użytkownik pomyślnie odgadnął kod.
-
 `void SetLetters(int length)` - ustawia literki (na podstawie podanej długości), które będą brane pod uwagę podczas losowania kodu.
 
 `bool CheckCodeLength(string code)` - sprawdza, czy długość podanego przez gracza kodu jest prawidłowa.
