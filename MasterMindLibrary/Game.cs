@@ -4,7 +4,7 @@ using System.Text;
 namespace MasterMindLibrary
 {
 	/// <summary>
-	/// Główna klasa (model) gry, który można bardzo łatwo zmodyfikować, tak by pozwalał na generowanie jeszcze dłuższych i bardziej skomplikowanych kodów i dawał użytkownikowi więcej mozliwości.
+	/// Główna klasa (model) gry, którą można bardzo łatwo zmodyfikować, tak by pozwalała na generowanie jeszcze dłuższych i bardziej skomplikowanych kodów i dawał użytkownikowi więcej mozliwości.
 	/// </summary>
 	public class Game
 	{
@@ -88,7 +88,9 @@ namespace MasterMindLibrary
 			private set;
 		}
 
-		// Rozpoczyna grę.
+		/// <summary>
+		/// Rozpoczyna grę.
+		/// </summary>
 		public void Start()
 		{
 			TotalMoves = 0;
@@ -104,7 +106,7 @@ namespace MasterMindLibrary
 		}
 
 		/// <summary>
-		/// Kończy grę - użytkownik pomyślnie odgadnął kod.
+		/// Kończy grę - użytkownik pomyślnie odgadł kod.
 		/// </summary>
 		private void Finish()
 		{
